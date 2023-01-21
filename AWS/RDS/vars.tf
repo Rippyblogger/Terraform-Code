@@ -10,7 +10,7 @@ variable "REGION" {
   type = string
 }
 
-variable "private_subnet_1" {
+variable "private_subnets" {
   type = map
 }
 

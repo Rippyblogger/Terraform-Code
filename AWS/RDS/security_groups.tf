@@ -7,7 +7,7 @@ resource "aws_security_group" "instance_security_group" {
     description = "SSH from anywhere"
     from_port   = 0
     to_port     = 22
-    protocol    = "-1"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 

@@ -15,7 +15,7 @@ resource "aws_db_parameter_group" "default" {
 
 resource "aws_db_subnet_group" "mysql_sb_group" {
   name       = "main"
-  subnet_ids = [aws_subnet.private_subnet-1.id]
+  subnet_ids = [aws_subnet.private_subnet-1.id, aws_subnet.private_subnet-2.id]
 
   tags = {
     Name = "MySQL DB subnet group"
@@ -38,7 +38,7 @@ resource "aws_db_instance" "default" {
   storage_type            = "gp2"
   backup_retention_period = 1                                         
   availability_zone       = aws_subnet.private_subnet-1.availability_zone  
-  
+
   tags = {
     Name = "mysql-instance"
   }
